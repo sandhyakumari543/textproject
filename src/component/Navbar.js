@@ -1,5 +1,6 @@
 import React from 'react';
-import{Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 
 export default function Navbar(props) {
     return (
@@ -12,23 +13,22 @@ export default function Navbar(props) {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="/">Home</a>
+                            <Link className="nav-link" aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/about">About</Link>
                         </li>
-                    </ul>
-
+                    </ul>         
                     <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`} >
                         <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                         <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{props.mode === 'light' ? ' Enable LightMode' : 'Enable DarkMode'}</label>
                     </div>
 
-                    {/* New switch with red color */}
-                    {/* <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`} >
-                        <input className="form-check-input" onClick={props.toggleRedMode} type="checkbox" role="switch" id="flexSwitchCheckRed" />
-                        <label className="form-check-label" htmlFor="flexSwitchCheckRed">{props.mode === 'light' ? ' Enable LightMode' : 'Enable RedMode'}</label>
-                    </div> */}
+                    {/* New switch with green color */}
+                    <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`} >
+                        <input className="form-check-input" onClick={props.toggleGreenMode} type="checkbox" role="switch" id="flexSwitchCheckRed" />
+                        <label className="form-check-label" htmlFor="flexSwitchCheckRed">{props.mode === 'light' ? ' Enable LightMode' : 'Enable GreenMode'}</label>
+                    </div>
                 </div>
             </div>
         </nav>
